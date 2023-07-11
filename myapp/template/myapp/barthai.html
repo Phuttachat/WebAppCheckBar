@@ -1,0 +1,326 @@
+{% load static %}
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+<head>
+  <script src="https://getbootstrap.com/docs/5.3/assets/js/color-modes.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.112.5">
+  <title> WebAppCheckBar </title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/checkout/">
+  <link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+  <!-- Favicons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/apple-touch-icon.png"
+    sizes="180x180">
+  <link rel="icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32"
+    type="image/png">
+  <link rel="icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16"
+    type="image/png">
+  <link rel="manifest" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/manifest.json">
+  <link rel="mask-icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/safari-pinned-tab.svg"
+    color="#712cf9">
+  <link rel="icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/favicon.ico">
+
+
+  <meta name="theme-color" content="#712cf9">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-seri;
+      align-items: center;
+      margin: 0 auto;
+    }
+
+    .background-image {
+        background-image: url("{% static 'images/pair programming.svg' %}");
+        background-position: center;
+        background-size: cover;
+        height: 100vh;
+    }
+
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      width: 100%;
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: 1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .btn-bd-primary {
+      --bd-violet-bg: #712cf9;
+      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+      --bs-btn-font-weight: 600;
+      --bs-btn-color: var(--bs-white);
+      --bs-btn-bg: var(--bd-violet-bg);
+      --bs-btn-border-color: var(--bd-violet-bg);
+      --bs-btn-hover-color: var(--bs-white);
+      --bs-btn-hover-bg: #6528e0;
+      --bs-btn-hover-border-color: #6528e0;
+      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+      --bs-btn-active-color: var(--bs-btn-hover-color);
+      --bs-btn-active-bg: #5a23c8;
+      --bs-btn-active-border-color: #5a23c8;
+    }
+
+    .bd-mode-toggle {
+      z-index: 1500;
+    }
+
+    nav {
+      height: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      border-radius: 10px;
+      padding: 25px 25px;
+      margin: 0 auto;
+      border: 5px solid #1E90FF;
+    }
+
+    .container {
+      width: 1366px;
+      margin: 0 auto;
+    }
+
+    .container1 {
+      border-radius: 15px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border: 0px;
+
+    }
+
+    .btn {
+      background-image: linear-gradient(#FF1493, #8A2BE2);
+      color: #FFFFFF;
+      border-radius: 5px;
+      border: 0px;
+    }
+
+    .newbar {
+      background-image: linear-gradient(#FF1493, #8A2BE2);
+      color: #FFFFFF;
+      border-radius: 5px;
+      border: 0px;
+      margin-left: 520px;
+      height: 40px;
+      width: 150px;
+    }
+
+    .btn1 {
+      height: 70px;
+      width: 250px;
+      font-size: 28px;
+      background-image: linear-gradient(#4169E1, #000080);
+      color: #FFFFFF;
+      border-radius: 10px;
+      border: 0px;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      text-align: center;
+      margin: 20px;
+      left: 20px;
+    }
+
+    .barthai{
+        background-color: #FD6D6D;
+        height: 70px;
+        width: 250px;
+        color:#FFFFFF;
+        font-size: 36px;
+        border-radius: 25px;
+        text-align: center;
+        border: 0px;
+        
+    }
+
+    .table {
+      border: 1px solid #A9A9A9;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    td {
+      height: auto;
+      text-align: left;
+      border-spacing: 250px;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      margin: 0;
+      vertical-align: middle;
+    }
+
+    .container2{
+        margin-left: 670px;
+    }
+
+  </style>
+  <!-- Custom styles for this template -->
+  <link href="https://getbootstrap.com/docs/5.3/examples/checkout/checkout.css" rel="stylesheet">
+</head>
+
+<body class="background-image">
+  <main>
+    <div class="container">
+      <nav>
+        <img src="{% static 'images/CheckBar_2.svg' %}" alt=" " width="50px" height="50px">
+        <div class="logo">
+          <a href="{% url 'overview' %}">CHECK BAR</a>
+        </div>
+        <img src="{% static 'images/Button primary 1.svg' %}" alt=" " width="150px" height="54px">
+        User :_____
+        แผนก : ____
+        ตำแหน่ง : _______
+        <a href="{% url 'login' %}"><button class="btn" type="submit">ออกจากระบบ</button></a>
+      </nav>
+      <br>
+            <button class="barthai">Barcode ไทย</button>
+            <a href="{% url 'newbarthai' %}"><button class="newbar">+ New Barcode</button></a>
+      <br><br>
+      <div class="container1">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ชื่อสินค้า</th>
+            <th scope="col">รหัสบาร์โค๊ด</th>
+            <th scope="col">รหัสลูกค้า</th>
+            <th scope="col">นัมเบอร์สินค้า</th>
+            <th scope="col">ขนาด</th>
+            <th scope="col">ชนิด</th>
+            <th scope="col">ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ขวดโหล 872 ST</td>
+            <td>8853198300016</td>
+            <td>-</td>
+            <td>872 ST คละสี</td>
+            <td>O 17.5x17ซม.</td>
+            <td>ชิ้น</td>
+            <td><a href="{% url 'editbarthai' %}"><img src="{% static 'images/Edit.svg' %}" alt=" " width="50px" height="50px"></a> <img src="{% static 'images/trash.svg' %}" alt=" " width="15px" height="15px"></td>
+          </tr>
+          <tr>
+            <td>กระปุก 873</td>
+            <td>8853198300023</td>
+            <td>-</td>
+            <td>873 คละสี</td>
+            <td>O 15x7.5 ซม.</td>
+            <td>ชิ้น</td>
+            <td><a href="{% url 'editbarthai' %}"><img src="{% static 'images/Edit.svg' %}" alt=" " width="50px" height="50px"></a> <img src="{% static 'images/trash.svg' %}" alt=" " width="15px" height="15px"></td>
+          </tr>
+          <tr>
+            <td>เก้าอี้ 02 CL</td>
+            <td>8853198300030</td>
+            <td>-</td>
+            <td>02 CL</td>
+            <td>20x26x15.5 ซม.</td>
+            <td>ชิ้น</td>
+            <td><a href="{% url 'editbarthai' %}"><img src="{% static 'images/Edit.svg' %}" alt=" " width="50px" height="50px"></a> <img src="{% static 'images/trash.svg' %}" alt=" " width="15px" height="15px"></td>
+          </tr>
+          <tr>
+            <td>เก้าอี้ 05 CL</td>
+            <td>8853198300047</td>
+            <td>-</td>
+            <td>05 CL</td>
+            <td>23.8x29x18.5 ซม.</td>
+            <td>ชิ้น</td>
+            <td><a href="{% url 'editbarthai' %}"><img src="{% static 'images/Edit.svg' %}" alt=" " width="50px" height="50px"></a> <img src="{% static 'images/trash.svg' %}" alt=" " width="15px" height="15px"></td>
+          </tr>
+          <tr>
+            <td>ถ้วยน้ำ 200</td>
+            <td>8853198300054</td>
+            <td>-</td>
+            <td>200</td>
+            <td>O 7.7x7.7 ซม.</td>
+            <td>ชิ้น</td>
+            <td><a href="{% url 'editbarthai' %}"><img src="{% static 'images/Edit.svg' %}" alt=" " width="50px" height="50px"></a> <img src="{% static 'images/trash.svg' %}" alt=" " width="15px" height="15px"></td>
+          </tr>
+          <tr>
+            <td>ถ้วยน้ำ 262 TC</td>
+            <td>8853198300061</td>
+            <td>-</td>
+            <td>262TC</td>
+            <td>O 6.7x14.2 ซม.</td>
+            <td>ชิ้น</td>
+            <td><a href="{% url 'editbarthai' %}"><img src="{% static 'images/Edit.svg' %}" alt=" " width="50px" height="50px"></a> <img src="{% static 'images/trash.svg' %}" alt=" " width="15px" height="15px"></td>
+          </tr>
+          <tr>
+            <td>ถ้วยน้ำ 262 TCถ้วยน้ำ 262+A TC</td>
+            <td>8853198300078</td>
+            <td>-</td>
+            <td>262ATC</td>
+            <td>O 7x14.5 ซม.</td>
+            <td>ชิ้น</td>
+            <td><a href="{% url 'editbarthai' %}"><img src="{% static 'images/Edit.svg' %}" alt=" " width="50px" height="50px"></a> <img src="{% static 'images/trash.svg' %}" alt=" " width="15px" height="15px"></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+        <div class="container2">
+      <a href="#"><img src="{% static 'images/left.svg' %}" alt=" " width="40px" height="40px"></a>
+      <a href="#"><img src="{% static 'images/Page Number1.svg' %}" alt=" " width="40px" height="40px"></a>
+      <a href="#"><img src="{% static 'images/Page Number2.svg' %}" alt=" " width="40px" height="40px"></a>
+      <a href="#"><img src="{% static 'images/Page Number3.svg' %}" alt=" " width="40px" height="40px"></a>
+      <a href="#"><img src="{% static 'images/right.svg' %}" alt=" " width="40px" height="40px"></a>
+        </div>
+      </div>
+  </main>
+</body>
+</html>

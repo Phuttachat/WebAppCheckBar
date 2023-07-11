@@ -1,0 +1,244 @@
+{% load static %}
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+  <script src="https://getbootstrap.com/docs/5.3/assets/js/color-modes.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.112.5">
+  <title> WebAppCheckBar </title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/checkout/">
+  <link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+  <!-- Favicons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/apple-touch-icon.png"
+    sizes="180x180">
+  <link rel="icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32"
+    type="image/png">
+  <link rel="icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16"
+    type="image/png">
+  <link rel="manifest" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/manifest.json">
+  <link rel="mask-icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/safari-pinned-tab.svg"
+    color="#712cf9">
+  <link rel="icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/favicon.ico">
+
+
+  <meta name="theme-color" content="#712cf9">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-seri;
+      align-items: center;
+      margin: 0 auto;
+    }
+
+    .background-image {
+      background-image: url("{% static 'images/hero.svg' %}");
+      background-position: center;
+      background-size: cover;
+      height: 100vh;
+    }
+
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      width: 100%;
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: 1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .btn-bd-primary {
+      --bd-violet-bg: #712cf9;
+      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+      --bs-btn-font-weight: 600;
+      --bs-btn-color: var(--bs-white);
+      --bs-btn-bg: var(--bd-violet-bg);
+      --bs-btn-border-color: var(--bd-violet-bg);
+      --bs-btn-hover-color: var(--bs-white);
+      --bs-btn-hover-bg: #6528e0;
+      --bs-btn-hover-border-color: #6528e0;
+      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+      --bs-btn-active-color: var(--bs-btn-hover-color);
+      --bs-btn-active-bg: #5a23c8;
+      --bs-btn-active-border-color: #5a23c8;
+    }
+
+    .bd-mode-toggle {
+      z-index: 1500;
+    }
+
+    nav {
+      height: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      border-radius: 10px;
+      padding: 20px 20px;
+      margin: 36px 0;
+      border: 5px solid #87CEFA;
+    }
+
+    .container {
+      max-width: 1366px;
+      margin: 0 auto;
+
+    }
+
+    .container1 {
+      max-width: 543px;
+      max-height: 794px;
+      border-radius: 25px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px 20px;
+      justify-content: center;
+      box-shadow: 0 0 50px #1E90FF;
+      border: 5px solid 	#87CEFA;
+
+    }
+
+    .btn1 {
+      background-image: linear-gradient(#FF1493, #8A2BE2);
+      color: #FFFFFF;
+      border-radius: 5px;
+      border: 0px;
+    }
+
+    .error-message {
+      color: red;
+    }
+  </style>
+  <!-- Custom styles for this template -->
+  <link href="https://getbootstrap.com/docs/5.3/examples/checkout/checkout.css" rel="stylesheet">
+</head>
+
+<body class="background-image">
+  <main>
+    <div class="container">
+      <nav>
+        <img src="{% static 'images/CheckBar_2.svg' %}" alt=" " width="45px" height="45px">
+        <a href="#">Company</a>
+        <a href="#">About Us</a>
+        <a href="#">Team</a>
+        <a href="#">Products</a>
+        <a href="#">Blog</a>
+        <a href="#">Pricing</a>
+        <a href="{% url 'login' %}"> <button class="btn1" type="submit"> ล็อกอิน </button></a>
+      </nav>
+    </div>
+    <div class="container1">
+      <h2>
+        <center>สมัครสมาชิก</center>
+      </h2><br>
+      <div class="row g-4">
+        <div class="col-12">
+          <label for="fullname" class="form-label">ชื่อ-สกุล</label>
+          <input type="text" class="form-control" id="fullname" placeholder="กรุณากรอกชื่อ-สกุล" required>
+          <div class="invalid-feedback">
+            กรุณากรอกชื่อ-สกุลให้ครบถ้วนด้วยค่ะ.
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <label for="firstName" class="form-label">ตำแหน่ง</label>
+          <input type="text" class="form-control" id="firstName" placeholder="กรุณากรอกตำแหน่ง" value="" required>
+          <div class="invalid-feedback">
+            กรุณากรอกตำแหน่งให้ครบถ้วนด้วยค่ะ.
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <label for="lastName" class="form-label">แผนก</label>
+          <input type="text" class="form-control" id="lastName" placeholder="กรุณากรอกแผนก" value="" required>
+          <div class="invalid-feedback">
+            กรุณากรอกแผนกให้ครบถ้วนด้วยค่ะ.
+          </div>
+        </div>
+        <div class="col-12">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" id="username" placeholder="กรุณากรอก Username" required>
+          <div class="invalid-feedback">
+            กรุณากรอก Username ให้ครบถ้วนด้วยค่ะ.
+          </div>
+        </div>
+        <div class="col-12">
+          <label for="email" class="form-label">E-mail</label>
+          <input type="text" class="form-control" id="email" placeholder="กรุณากรอก E-mail" required>
+          <div class="invalid-feedback">
+            กรุณากรอก E-mail ให้ครบถ้วนด้วยค่ะ.
+          </div>
+        </div>
+        <div class="col-12">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="กรุณากรอก Password" required>
+          <div class="invalid-feedback">
+            กรุณากรอก Password ให้ครบถ้วนด้วยค่ะ.
+          </div>
+        </div>
+        <div class="col-12">
+          <label for="password1" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" id="password1" placeholder="กรุณากรอก Password อีกครั้ง" required>
+          <div class="invalid-feedback">
+            กรุณากรอก Password ให้ครบถ้วนด้วยค่ะ.
+          </div>
+        </div>
+        <a href="{% url 'login' %}"><button class="w-100 btn btn-primary btn-lg" type="submit">ตกลง </button></a>
+      </div>
+    </div>
+    </div>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,264 @@
+{% load static %}
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+  <script src="https://getbootstrap.com/docs/5.3/assets/js/color-modes.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.112.5">
+  <title> WebAppCheckBar </title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/checkout/">
+  <link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+  <!-- Favicons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/apple-touch-icon.png"
+    sizes="180x180">
+  <link rel="icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32"
+    type="image/png">
+  <link rel="icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16"
+    type="image/png">
+  <link rel="manifest" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/manifest.json">
+  <link rel="mask-icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+  <link rel="icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/favicon.ico">
+
+  <meta name="theme-color" content="#712cf9">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-seri;
+      align-items: center;
+      margin: 0 auto;
+
+    }
+
+    .grid{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    }
+
+    .background-image {
+        background-color: black;
+        background-position: center;
+        background-size: cover;
+        height: 100vh;
+        align-items: center;
+    }
+
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      width: 100%;
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: 1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+     
+    .bd-mode-toggle {
+      z-index: 1500;
+    }
+
+    nav {
+      height: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      border-radius: 10px;
+      padding: 25px 25px;
+      margin: 3rem;
+      border: 5px solid #1E90FF;
+    }
+
+    .container {
+      max-width: 1366px;
+      margin: 0 auto;
+      align-items: center;
+
+    }
+
+    .container1 {
+      max-width: 543px;
+      max-height: 794px;
+      border-radius: 25px;
+      margin: 0 auto 0;
+      padding: 50px 50px;
+      background-color: black;
+      color: #FFFFFF;
+    }
+
+    .login {
+      text-align: center;
+      font-weight: bold;
+      font-size: 36px;
+      
+    }
+
+    .btn1 {
+      height: 50px;
+      width: 550px;
+      font-size: 25px;
+      background-image: linear-gradient(#4169E1, #000080);
+      color: #FFFFFF;
+      border-radius: 20px;
+      border: 0px;
+    }
+
+    .btn2 {
+      height: 50px;
+      width: 550px;
+      font-size: 25px;
+      background-image: linear-gradient(#FFA07A, #FF8C00);
+      color: #FFFFFF;
+      border-radius: 20px;
+      border: 0px;
+    }
+
+    .forgotpassword {
+      text-align: right;
+    }
+
+    .block{
+        max-width: 600px;
+        max-height: 794px;
+        position: relative;
+        background: linear-gradient(0deg , black , rgb(44, 43, 43));
+        color: #FFFFFF;
+        text-align: left;
+        margin: 100px;
+        padding: 20px;
+    }
+
+    .glow::before, .glow::after{
+        margin: 0 auto;
+        content: '';
+        position: absolute;
+        left: -2px;
+        top: -2px;
+        background: linear-gradient(45deg, #e6fb04, #ff6600, #00ff66, #00ffff, #ff00ff, #ff0099, #6e0dd0, #ff3300, #099fff);
+        background-size: 400%;
+        width: calc(100% + 5px);
+        height: calc(100% + 5px);
+        z-index: -1;
+        animation: animate 20s linear infinite;
+    }
+
+    @keyframes animate{
+      0%{
+        background-position: 0 0;
+      }
+      50%{
+        background-position: 400% 0;
+      }
+      100%{
+        background-position: 0 0;
+      }
+    }
+
+    .glow::after{
+        filter: blur(50px);
+    }
+
+  </style>
+  <!-- Custom styles for this template -->
+  <link href="https://getbootstrap.com/docs/5.3/examples/checkout/checkout.css" rel="stylesheet">
+</head>
+<body class="background-image">
+  <div class="grid">
+  <main>
+    <div class="container">
+      <nav>
+        <img src="{% static 'images/CheckBar_2.svg' %}" alt=" " width="50px" height="50px">
+        <div class="logo">    
+          <a href="#">CHECK BAR</a>
+        </div>
+        <a href="#">Company</a>
+        <a href="#">About Us</a>
+        <a href="#">Team</a>
+        <a href="#">Products</a>
+        <a href="#">Blog</a>
+        <a href="#">Pricing</a>
+      </nav>
+    </div>
+        <center>
+        <div class="block glow">
+        <center><img src="{% static 'images/CheckBar-dark1.webp' %}" alt=" " width="130px" height="130px"></center>
+        <div class="login">
+          Log in <br>
+        </div>
+        <div class="row g-1">
+          <div class="col-12">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="กรุณากรอก Username" required>
+          </div>
+          <div class="col-12">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="กรุณากรอก Password" required>
+          </div>
+          <div class="forgotpassword">
+            <a href=" ">ลืมรหัสผ่าน</a>
+          </div>
+          <center>
+          <a href="{% url 'overview' %}"><button class="btn1" type="submit">ตกลง</button></a>
+          <br><br>
+          <p> ----------------------------- or ----------------------------- </p>
+          <br>
+          <a href="{% url 'register' %}"><button class="btn2" type="submit">สมัครสมาชิก</button></a>
+          </center>
+        </div>
+    </div>
+  </center>
+  </main>
+</div>
+</body>
+</html>
