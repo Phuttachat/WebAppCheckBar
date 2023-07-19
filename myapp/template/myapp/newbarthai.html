@@ -33,6 +33,10 @@
     <meta name="theme-color" content="#712cf9">
 
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Poppins', sans-seri;
             align-items: center;
@@ -134,8 +138,8 @@
         .container {
             width: 1366px;
             margin: 0 auto;
-            
-            
+
+
         }
 
         .container1 {
@@ -148,7 +152,7 @@
             position: relative;
             /* left: 200px; */
             top: auto;
-            
+
         }
 
         .btn {
@@ -158,7 +162,7 @@
             border: 0px;
         }
 
-        .save{
+        .save {
             background-image: linear-gradient(#FF1493, #8A2BE2);
             color: #FFFFFF;
             border-radius: 5px;
@@ -169,7 +173,7 @@
             left: 220px;
         }
 
-        .cancel{
+        .cancel {
             background-color: red;
             color: #FFFFFF;
             border-radius: 5px;
@@ -205,7 +209,7 @@
             border-radius: 25px;
             text-align: center;
             border: 0px;
-            
+
         }
 
         .table {
@@ -229,7 +233,7 @@
             margin-left: 670px;
         }
 
-        .productimage{
+        .productimage {
             background-color: #FFFFFF;
             max-width: 40%;
             height: 700px;
@@ -239,11 +243,11 @@
             padding: 2rem;
             display: block;
             box-shadow: 0 0 25px #FF4500;
-            
-            
+
+
         }
 
-        .edit{
+        .edit {
             background-image: linear-gradient(#FF1493, #8A2BE2);
             color: #FFFFFF;
             border-radius: 5px;
@@ -252,7 +256,7 @@
             width: 60px;
         }
 
-        .remove{
+        .remove {
             background-color: #FFFFFF;
             border-radius: 5px;
         }
@@ -268,84 +272,87 @@
                 <img src="{% static 'images/CheckBar_2.svg' %}" alt=" " width="50px" height="50px">
                 <div class="logo">
                     <a href="{% url 'overview' %}">CHECK BAR</a>
-                
-                <img src="{% static 'images/Button primary 1.svg' %}" alt=" " width="150px" height="54px">
-                User :_____
-                แผนก : ____
-                ตำแหน่ง : _______
-                <a href="{% url 'login' %}"><button class="btn" type="submit">ออกจากระบบ</button></a>
+
+                    <img src="{% static 'images/Button primary 1.svg' %}" alt=" " width="150px" height="54px">
+                    User :_____
+                    แผนก : ____
+                    ตำแหน่ง : _______
+                    <a href="{% url 'login' %}"><button class="btn" type="submit">ออกจากระบบ</button></a>
             </nav>
             <br>
             <button class="barthai">New Barcode ไทย</button>
             <br><br>
             <div class="row">
-            <div class="productimage">
+                <div class="productimage">
                     <p>Product Image</p>
-                    <center><img src="{% static 'images/Add_Image.png' %}" alt=" " width="200px" height="200px"></center>
+                    <center><img src="{% static 'images/Add_Image.png' %}" alt=" " width="200px" height="200px">
+                    </center>
                     <br>
                     <a href="{% url 'barthai' %}"><button class="edit" type="submit">Edit</button></a>
                     <a href="{% url 'barthai' %}"><button class="remove" type="submit">Remove</button></a>
                     <br><br>
-                <p>Barcode Image</p>
-                <center><img src="{% static 'images/Add_Image.png' %}" alt=" " width="200px" height="200px"></center>
-                <br>
-                <a href="{% url 'barthai' %}"><button class="edit" type="submit">Edit</button></a>
-                <a href="{% url 'barthai' %}"><button class="remove" type="submit">Remove</button></a>                  
+                    <p>Barcode Image</p>
+                    <center><img src="{% static 'images/Add_Image.png' %}" alt=" " width="200px" height="200px">
+                    </center>
+                    <br>
+                    <a href="{% url 'barthai' %}"><button class="edit" type="submit">Edit</button></a>
+                    <a href="{% url 'barthai' %}"><button class="remove" type="submit">Remove</button></a>
+                </div>
+                <div class="container1 col-sm-6">
+                    <label>รหัสลูกค้า</label>
+                    <input class="form-control form-control-sm" type="text" placeholder=""
+                        aria-label=".form-control-sm example">
+                    <label>รหัสบาร์โค้ด</label>
+                    <input class="form-control" type="text" placeholder="" aria-label="default input example">
+                    <label>ชื่อสินค้า</label>
+                    <input class="form-control form-control-sm" type="text" placeholder=""
+                        aria-label=".form-control-sm example">
+                    <label>นัมเบอร์สินค้า</label>
+                    <input class="form-control form-control-sm" type="text" placeholder=""
+                        aria-label=".form-control-sm example">
+                    <label>ขนาด</label>
+                    <input class="form-control form-control-sm" type="text" placeholder=""
+                        aria-label=".form-control-sm example">
+                    <label>ราคา</label>
+                    <input class="form-control form-control-sm" type="text" placeholder=""
+                        aria-label=".form-control-sm example">
+                    <label>บรรจุ</label>
+                    <input class="form-control form-control-sm" type="text" placeholder=""
+                        aria-label=".form-control-sm example">
+                    <label>จำนวน</label>
+                    <input class="form-control form-control-sm" type="text" placeholder=""
+                        aria-label=".form-control-sm example">
+                    <label>ชนิด</label>
+                    <input class="form-control form-control-sm" type="text" placeholder=""
+                        aria-label=".form-control-sm example">
+                    <label>วิธีการใช้</label>
+                    <input class="form-control form-control-sm" type="text" placeholder=""
+                        aria-label=".form-control-sm example">
+                    <label>1...............</label>
+                    <input class="form-control form-control-sm" type="text" placeholder=""
+                        aria-label=".form-control-sm example">
+                    <label>2...............</label>
+                    <input class="form-control form-control-sm" type="text" placeholder=""
+                        aria-label=".form-control-sm example">
+                    <label>ประเทศ</label>
+                    <input class="form-control form-control-sm" type="text" placeholder=""
+                        aria-label=".form-control-sm example">
+                    <label>ลูกค้า</label>
+                    <input class="form-control form-control-sm" type="text" placeholder=""
+                        aria-label=".form-control-sm example">
+                    <label>ที่อยู่ 1</label>
+                    <input class="form-control form-control-sm" type="text" placeholder=""
+                        aria-label=".form-control-sm example">
+                    <label>ที่อยู่ 2</label>
+                    <input class="form-control form-control-sm" type="text" placeholder=""
+                        aria-label=".form-control-sm example">
+                    <br>
+                    <a href="{% url 'barthai' %}"><button class="save" type="submit">Save</button></a>
+                    <a href="{% url 'barthai' %}"><button class="cancel" type="submit">Cancel</button></a>
+                </div>
+            </div>
         </div>
-            <div class="container1 col-sm-6">
-                <label>รหัสลูกค้า</label>
-                <input class="form-control form-control-sm" type="text" placeholder=""
-                    aria-label=".form-control-sm example">
-                <label>รหัสบาร์โค้ด</label>
-                <input class="form-control" type="text" placeholder="" aria-label="default input example">
-                <label>ชื่อสินค้า</label>
-                <input class="form-control form-control-sm" type="text" placeholder=""
-                    aria-label=".form-control-sm example">
-                <label>นัมเบอร์สินค้า</label>
-                <input class="form-control form-control-sm" type="text" placeholder=""
-                    aria-label=".form-control-sm example">
-                <label>ขนาด</label>
-                <input class="form-control form-control-sm" type="text" placeholder=""
-                    aria-label=".form-control-sm example">
-                <label>ราคา</label>
-                <input class="form-control form-control-sm" type="text" placeholder=""
-                    aria-label=".form-control-sm example">
-                <label>บรรจุ</label>
-                <input class="form-control form-control-sm" type="text" placeholder=""
-                    aria-label=".form-control-sm example">
-                <label>จำนวน</label>
-                <input class="form-control form-control-sm" type="text" placeholder=""
-                    aria-label=".form-control-sm example">
-                <label>ชนิด</label>
-                <input class="form-control form-control-sm" type="text" placeholder=""
-                    aria-label=".form-control-sm example">
-                <label>วิธีการใช้</label>
-                <input class="form-control form-control-sm" type="text" placeholder=""
-                    aria-label=".form-control-sm example">
-                <label>1...............</label>
-                <input class="form-control form-control-sm" type="text" placeholder=""
-                    aria-label=".form-control-sm example">
-                <label>2...............</label>
-                <input class="form-control form-control-sm" type="text" placeholder=""
-                    aria-label=".form-control-sm example">
-                <label>ประเทศ</label>
-                <input class="form-control form-control-sm" type="text" placeholder=""
-                    aria-label=".form-control-sm example">
-                <label>ลูกค้า</label>
-                <input class="form-control form-control-sm" type="text" placeholder=""
-                    aria-label=".form-control-sm example">
-                <label>ที่อยู่ 1</label>
-                <input class="form-control form-control-sm" type="text" placeholder=""
-                    aria-label=".form-control-sm example">
-                <label>ที่อยู่ 2</label>
-                <input class="form-control form-control-sm" type="text"
-                    placeholder="" aria-label=".form-control-sm example">
-                <br>
-                <a href="{% url 'barthai' %}"><button class="save" type="submit">Save</button></a>
-                <a href="{% url 'barthai' %}"><button class="cancel" type="submit">Cancel</button></a>
-            </div> 
-        </div>   
-        </div>            
     </main>
 </body>
+
 </html>

@@ -1,6 +1,7 @@
 {% load static %}
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
+
 <head>
   <script src="https://getbootstrap.com/docs/5.3/assets/js/color-modes.js"></script>
 
@@ -32,6 +33,10 @@
   <meta name="theme-color" content="#712cf9">
 
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Poppins', sans-seri;
       align-items: center;
@@ -39,10 +44,10 @@
     }
 
     .background-image {
-        background-image: url("{% static 'images/pair programming.svg' %}");
-        background-position: center;
-        background-size: cover;
-        height: 100vh;
+      background-image: url("{% static 'images/pair programming.svg' %}");
+      background-position: center;
+      background-size: cover;
+      height: 100vh;
     }
 
     .bd-placeholder-img {
@@ -175,7 +180,6 @@
       border: 2px solid #9932CC;
       text-align: center;
       margin: 0 auto;
-      
     }
 
     td {
@@ -230,6 +234,7 @@
             <th scope="col">ชื่อสินค้า</th>
             <th scope="col">รหัสบาร์โค๊ด</th>
             <th scope="col">รหัสลูกค้า</th>
+            <th scope="col">ลูกค้า</th>
             <th scope="col">นัมเบอร์สินค้า</th>
             <th scope="col">ขนาด</th>
             <th scope="col">ชนิด</th>
@@ -240,6 +245,7 @@
             <td>กล่องคัลเลอร์กากกาแฟ 655CG</td>
             <td>8853198338736</td>
             <td>-</td>
+            <td>-</td>
             <td>NC655CG</td>
             <td>9.8x14.2x7 ซม.</td>
             <td>ชิ้น</td>
@@ -247,6 +253,7 @@
           <tr>
             <td>กล่องคัลเลอร์เปลือกกาแฟ 6550CS</td>
             <td>8853198338743</td>
+            <td>-</td>
             <td>-</td>
             <td>NC6550CS</td>
             <td>12.5x16.7x8.4 ซม.</td>
@@ -256,6 +263,7 @@
             <td>กล่องคัลเลอร์กากกาแฟ 6550CG</td>
             <td>8853198338750</td>
             <td>-</td>
+            <td>-</td>
             <td>NC6550CG</td>
             <td>12.5x16.7x8.4 ซม.</td>
             <td>ชิ้น</td>
@@ -263,6 +271,7 @@
           <tr>
             <td>กล่องคัลเลอร์เปลือกกาแฟ 6551CS</td>
             <td>8853198338767</td>
+            <td>-</td>
             <td>-</td>
             <td>NC6551CS</td>
             <td>14.5x20.3x10 ซม.</td>
@@ -272,6 +281,7 @@
             <td>กระปุก 218 ฝาเขียว</td>
             <td>8853198339337</td>
             <td>-</td>
+            <td>-</td>
             <td>218 ฝาเขียว</td>
             <td>O 10.5x7.5 ซม.</td>
             <td>ชิ้น</td>
@@ -280,4 +290,5 @@
       </table>
   </main>
 </body>
+
 </html>
